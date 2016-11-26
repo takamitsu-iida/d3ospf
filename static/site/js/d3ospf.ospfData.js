@@ -307,7 +307,7 @@
           for (j = 0; j < lsa.connectedToStubs.length; j++) {
             var stb = makeNode();
             stb.type = 'stub';
-            stb.id = nodes.length + ': ' + lsa.connectedToStubs[j].link_id + '/' + lsa.connectedToStubs[j].link_data;
+            stb.id = lsa.connectedToStubs[j].link_id + '/' + lsa.connectedToStubs[j].link_data;
             stb.img = stubImage;
             stb.x = -8;
             stb.y = -8;

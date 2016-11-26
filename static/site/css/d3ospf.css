@@ -68,44 +68,7 @@ div#d3ospf {
 div#d3ospf #ospf-body {
   width: 100%;
   height: 100%;
-  overflow: scroll;
-}
-
-/* container for radiolink */
-
-.ospf-local-selector {
-  position: absolute;
-  margin: 10px;
-  border: 1px solid #6895b4;
-}
-
-/* radiolink */
-
-.rl-contents {
-  float: left;
-  padding: 5px;
-  padding-right: 0px;
-  margin: 5px;
-  margin-right: 0px;
-}
-
-.rl-contents a {
-  color: black;
-  font-size: 12px;
-  padding: 5px;
-  background: #E2E2E2;
-  cursor: pointer;
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-.rl-contents a:hover {
-  text-decoration: underline;
-}
-
-.rl-contents a.active {
-  color: white;
-  background: #555;
+  overflow: hidden;
 }
 
 /* ospf */
@@ -135,7 +98,8 @@ div#d3ospf #ospf-body {
 
 span#ospf-tooltip {
   position       : absolute;
-  left           : 0;
+  right          : 0px;
+  bottom         : 0px;
   padding        : 5px;
   text-align     : left;
   white-space    : pre;
@@ -145,7 +109,6 @@ span#ospf-tooltip {
   font-size      : 12px;
   background     : #ddd;
   border         : solid 1px #aaa;
-  border-radius  : 5px;
   pointer-events : none;
 }
 
@@ -153,7 +116,7 @@ span#ospf-tooltip {
 
 .ospf-display-selector {
   position: absolute;
-  right: 20px;
+  left: 10px;
   margin: 10px;
   padding: 10px;
   border: 1px solid #6895b4;

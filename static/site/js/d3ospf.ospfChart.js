@@ -72,15 +72,15 @@
 
         // 渡されるデータはオブジェクト
         topology = _data;
-        console.log(topology);
+        // console.log(topology);
 
         // コンテナの大きさを取り出す
         var containerWidth = container.node().clientWidth;
         var containerHeight = container.node().clientHeight;
 
         // svgの大きさはそれに合わせる(スクロールバーの分を適当に引く)
-        exports.width(containerWidth - 20);
-        exports.height(containerHeight - 20);
+        exports.width(containerWidth);
+        exports.height(containerHeight);
 
         initDisplaySelector();
 
@@ -128,6 +128,9 @@
 
         // 初期状態
         setNodeFixed(true);
+
+        console.log(node);
+
       });
     }
 
