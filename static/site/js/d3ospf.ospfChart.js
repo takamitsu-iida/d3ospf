@@ -128,9 +128,6 @@
 
         // 初期状態
         setNodeFixed(true);
-
-        console.log(node);
-
       });
     }
 
