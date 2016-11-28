@@ -6,9 +6,15 @@
     // このモジュールは関数ではなくマップを返す
     var exports = {};
 
-    var routerImage = 'static/site/img/r32.png';
-    var transitImage = 'static/site/img/t24.png';
-    var stubImage = 'static/site/img/stub16.png';
+    // ローカルで実行する場合
+    var prefix = 'static/site/img/';
+
+    // Google Siteで実行する場合
+    // var prefix = 'https://sites.google.com/site/d3ospfdemo/home/';
+
+    var routerImage = prefix + 'r32.png';
+    var transitImage = prefix + 't24.png';
+    var stubImage = prefix + 'stub16.png';
 
     // プロトタイプ
     var proto_lsa = {

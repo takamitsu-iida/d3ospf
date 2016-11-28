@@ -2,8 +2,10 @@
 
 (function() {
   d3ospf.ospfChart = function module(_accessor) {
-    // SVGの枠の大きさ
-    // widthはコンテナの大きさに合わせて自動調整する
+    // コンテナの幅に合わせるかどうか
+    var adjustContainerWidth = false;
+
+    // 枠の大きさ
     var width = 800;
     var height = 400;
 
@@ -53,6 +55,10 @@
 
     // call()されたときに呼ばれる公開関数
     function exports(_selection) {
+      if (adjustContainerWidth) {
+        var containerWidth = _selection.node().clientWidth;
+        exports.width(containerWidth);
+      }
       container = _selection;
       _selection.each(function(_data) {
         if (!_data) {
