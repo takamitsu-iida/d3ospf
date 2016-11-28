@@ -32,7 +32,7 @@
       return dm.sampleText();
     });
 
-    // mapChartをインスタンス化する
+    // ospfChartをインスタンス化する
     var chart = d3ospf.ospfChart();
 
     // コンテナへのセレクタ

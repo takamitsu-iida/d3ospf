@@ -9,7 +9,7 @@
     var width = 800;
     var height = 400;
 
-    // 'g'の描画領域となるデフォルトのマージン
+    // 描画領域のマージン
     var margin = {
       top: 70,
       right: 20,
@@ -33,7 +33,7 @@
     // ツールチップのセレクタ
     var tooltip;
 
-    //
+    // 表示設定(チェックボックスの項目)
     var displaySelectItems = ['stub', 'fixed'];
     var displaySelectMap = {};
 
@@ -67,6 +67,9 @@
           container.select('svg').remove();
           return;
         }
+        // 渡されるデータは配列ではなく、オブジェクト
+        topology = _data;
+        // console.log(topology);
 
         // ツールチップ用のHTMLを追加する
         var tooltipAll = container.selectAll('#ospf-tooltip').data(['dummy']);
@@ -76,18 +79,7 @@
           .attr('id', 'ospf-tooltip')
           .merge(tooltipAll);
 
-        // 渡されるデータはオブジェクト
-        topology = _data;
-        // console.log(topology);
-
-        // コンテナの大きさを取り出す
-        var containerWidth = container.node().clientWidth;
-        var containerHeight = container.node().clientHeight;
-
-        // svgの大きさはそれに合わせる(スクロールバーの分を適当に引く)
-        exports.width(containerWidth);
-        exports.height(containerHeight);
-
+        // チェックボックスを表示
         initDisplaySelector();
 
         // svgを作成する
