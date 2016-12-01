@@ -12,6 +12,9 @@
     // チェックボックスの初期状態
     var initialState = true;
 
+    // ダミーデータ
+    var dummy = ['dummy'];
+
     // カスタムイベント
     var dispatch = d3.dispatch('click');
 
@@ -47,7 +50,7 @@
         //     <div class="cb-checkbox-container"></div>
 
         // 全体を束ねるグループ
-        var contentsAll = container.selectAll('.cb-contents').data(['dummy']);
+        var contentsAll = container.selectAll('.cb-contents').data(dummy);
         var contents = contentsAll
           .enter()
           .append('div')
@@ -66,7 +69,7 @@
           });
 
         // checkboxを束ねるcb-interaction-group
-        var interactionGroupAll = contents.selectAll('.cb-interaction-group').data(['dummy']);
+        var interactionGroupAll = contents.selectAll('.cb-interaction-group').data(dummy);
         var interactionGroup = interactionGroupAll
           .enter()
           .append('div')

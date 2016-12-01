@@ -22,6 +22,9 @@
     var w = width - margin.left - margin.right;
     var h = height - margin.top - margin.bottom;
 
+    // ダミーデータ
+    var dummy = ['dummy'];
+
     // svgへのセレクタ
     var svg;
 
@@ -72,7 +75,7 @@
         // console.log(topology);
 
         // ツールチップ用のHTMLを追加する
-        var tooltipAll = container.selectAll('#ospf-tooltip').data(['dummy']);
+        var tooltipAll = container.selectAll('#ospf-tooltip').data(dummy);
         tooltip = tooltipAll
           .enter()
           .append('span')
@@ -83,7 +86,7 @@
         initDisplaySelector();
 
         // svgを作成する
-        var svgAll = container.selectAll('svg').data(['dummy']);
+        var svgAll = container.selectAll('svg').data(dummy);
         svg = svgAll
           .enter()
           .append('svg')
@@ -92,7 +95,7 @@
           .attr('height', height);
 
         // svgの上にチャート描画領域'g'を追加
-        var baseLayerAll = svg.selectAll('.ospf-base-layer').data(['dummy']);
+        var baseLayerAll = svg.selectAll('.ospf-base-layer').data(dummy);
         baseLayer = baseLayerAll
           // ENTER領域
           .enter()
@@ -104,14 +107,14 @@
           .attr('height', h)
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-        var linkLayerAll = baseLayer.selectAll('.ospf-link-layer').data(['dummy']);
+        var linkLayerAll = baseLayer.selectAll('.ospf-link-layer').data(dummy);
         linkLayer = linkLayerAll
           .enter()
           .append('g')
           .classed('ospf-link-layer', true)
           .merge(linkLayerAll);
 
-        var nodeLayerAll = baseLayer.selectAll('.ospf-node-layer').data(['dummy']);
+        var nodeLayerAll = baseLayer.selectAll('.ospf-node-layer').data(dummy);
         nodeLayer = nodeLayerAll
           .enter()
           .append('g')
@@ -333,7 +336,7 @@
         displaySelectMap[displaySelectItems[i]] = true;
       }
 
-      var displaySelectorAll = container.selectAll('.ospf-display-selector').data(['dummy']);
+      var displaySelectorAll = container.selectAll('.ospf-display-selector').data(dummy);
       var displaySelector = displaySelectorAll
         .enter()
         .append('div')
